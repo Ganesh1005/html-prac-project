@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Front End | CN Technology</title>
+  <script src="https://kit.fontawesome.com/073f66530f.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* ---------- HEADER & NAVBAR ---------- */
+    header marquee {
+      background-color: yellow;
+      margin-top: -6px;
+      padding: 4px;
+    }
+
+    nav {
+      display: flex;
+      padding-left: 30px;
+      align-items: center;
+      color: white;
+      background-color: rgb(3, 3, 62);
+    }
+
+    #g { padding-left: 60px; }
+
+    .social-icons {
+      display: flex;
+      gap: 35px;
+      font-size: 20px;
+      padding-left: 370px;
+    }
+
+    .gg {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 25px;
+      background-color: #4CAF50;
+      padding-right: 100px;
+    }
+
+    #btn {
+      border-radius: 10px;
+      padding: 4px 8px;
+      font-size: 15px;
+      width: 100px;
+      height: 40px;
+      cursor: pointer;
+      border: 2px solid #fff;
+      background-color: #4CAF50;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Dropdown */
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown-content {
+      display: none;
+      top: 100%;
+      left: -20%;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+    .dropdown-content p {
+      color: black;
+      padding: 10px 16px;
+      margin: 0;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .dropdown-content p:hover { background-color: #f1f1f1; }
+    .dropdown:hover .dropdown-content { display: block; position: absolute; }
+
+    /* Enquiry Form on Hover */
+    .enquiry-wrapper { position: relative; display: inline-block; }
+    .enquiry-popup {
+      display: none;
+      position: absolute;
+      top: 45px;
+      right: 0;
+      width: 300px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 15px;
+      z-index: 10;
+    }
+    .enquiry-wrapper:hover .enquiry-popup { display: block; }
+    .enquiry-popup h2 {
+      font-size: 16px; color: #333; margin-bottom: 10px; text-align: center;
+    }
+    .toggle-buttons {
+      display: flex; justify-content: center; gap: 8px; margin-bottom: 10px;
+    }
+    .tab {
+      background: #007bff; color: #fff; border: none; border-radius: 4px;
+      padding: 5px 10px; cursor: pointer;
+    }
+    .enquiry-popup form {
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .enquiry-popup input, .enquiry-popup select {
+      padding: 8px; border: 1px solid #ccc; border-radius: 4px;
+    }
+    .enquiry-popup input[type="submit"] {
+      background-color: #009970; color: white; border: none;
+      cursor: pointer; font-weight: bold; transition: 0.3s;
+    }
+    .enquiry-popup input[type="submit"]:hover { background-color: #00b383; }
+
+    /* ---------- PAGE CONTENT ---------- */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f9f7;
+    }
+
+    .page-container {
+      padding: 50px 120px;
+      color: #333;
+    }
+
+    .page-container h1 {
+      text-align: center;
+      color: #009970;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .page-container h3 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .info-box {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 25px 40px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .info-box h2 {
+      color: #ff9900;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .info-box ul {
+      margin-left: 20px;
+      line-height: 1.7;
+    }
+
+    /* Accordion Section */
+    .accordion {
+      background-color: #ffb300;
+      color: #000;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.4s;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .active, .accordion:hover {
+      background-color: #ffa000;
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow-y: auto;
+      transition: max-height 0.3s ease-out;
+      border-left: 4px solid #ffb300;
+      border-radius: 5px;
+    }
+
+    .panel p {
+      padding: 15px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .panel ul {
+      margin-left: 25px;
+      padding-bottom: 15px;
+    }
+
+    
+
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <marquee>Our best offer Ever!! Summer special - Get 3 Courses at 499 INR only. <a href="#">Read more</a></marquee>
+  </header>
+
+  <!-- CONTACT NAV -->
+  <nav>
+    <h3>Email: jessepinkman@gmail.com</h3>
+    <h3 id="g">Contact: +91 9999999999</h3>
+    <div class="social-icons">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-linkedin"></i>
+    </div>
+  </nav>
+
+  <!-- MAIN NAV -->
+  <div class="gg">
+    <h2>CN Technology</h2>
+    <h2 id="ggg"><a href="finaltask.html" style="color:Black; text-decoration:none;">Home</a></h2>
+    <h2 id="ggg">About</h2>
+
+    <div class="dropdown">
+      <h2 id="ggg">Courses</h2>
+      <div class="dropdown-content">
+        <p>Front End</p>
+        <p>Back End</p>
+      </div>
+    </div>
+
+    <h2 id="ggg">Online Training</h2>
+    <h2 id="ggg">Contact</h2>
+
+    <div class="enquiry-wrapper">
+      <button id="btn">Enquiry</button>
+      <div class="enquiry-popup" id="enquiry-popup">
+        <h2>Request for Class Room & Online Training</h2>
+        <div class="toggle-buttons">
+          <button class="tab classroom">🏫 Classroom</button>
+          <button class="tab online">💻 Online</button>
+        </div>
+
+        <form>
+          <input type="text" placeholder="Enter Your Name" required>
+          <input type="email" placeholder="Enter Your Email" required>
+          <input type="text" placeholder="Enter Your Mobile No." required>
+
+          <select required>
+            <option value="">Select Course</option>
+            <option>Full Stack Development</option>
+            <option>Cloud Computing (AWS / Azure)</option>
+            <option>DevOps Engineering</option>
+            <option>Data Science & AI</option>
+            <option>Cyber Security</option>
+            <option>Power BI & Data Analytics</option>
+          </select>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="page-container">
+    <h1>Front End Development</h1>
+    <h3>HTML • CSS • JavaScript • React</h3>
+
+    <div class="info-box">
+      <h2>Who this course is for?</h2>
+      <ul>
+        <li>Manual testers or non-programmers interested in learning Automation.</li>
+        <li>Any Software engineer interested in Mobile Technologies.</li>
+        <li>Freshers / Undergraduates / Graduates / Software Testers.</li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <h2>Why take this course?</h2>
+      <ul>
+        <li>Upgrade your skills from manual testing to automation and UI development.</li>
+        <li>Learn advanced concepts for implementing automation in your projects.</li>
+        <li>Hands-on experience with real-world web technologies.</li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <h2>What you will learn?</h2>
+      <ul>
+        <li>Handle real-time challenges using modern web frameworks.</li>
+        <li>Complete understanding of HTML, CSS, JavaScript, and React.</li>
+        <li>Develop a full responsive website project.</li>
+        <li>100% Job Assistance after course completion.</li>
+      </ul>
+    </div>
+
+    <!-- ACCORDION SECTIONS -->
+    <button class="accordion">HTML</button>
+    <div class="panel">
+      <ul>
+        <li>Structure of HTML document</li>
+        <li>Tags, Elements, and Attributes</li>
+        <li>Forms and Semantic tags</li>
+      </ul>
+    </div>
+
+    <button class="accordion">CSS</button>
+    <div class="panel">
+      <ul>
+        <li>Selectors and Properties</li>
+        <li>Box Model and Flexbox</li>
+        <li>Responsive Design with Media Queries</li>
+      </ul>
+    </div>
+
+    <button class="accordion">JavaScript</button>
+    <div class="panel">
+      <ul>
+        <li>Variables, Functions, and Loops</li>
+        <li>DOM Manipulation</li>
+        <li>ES6 Features and Events</li>
+      </ul>
+    </div>
+
+    <button class="accordion">React Js</button>
+    <div class="panel">
+      <ul>
+        <li>Components, Props, and State</li>
+        <li>Hooks and Routing</li>
+        <li>API Integration and Deployment</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Accordion Functionality
+    const acc = document.getElementsByClassName("accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

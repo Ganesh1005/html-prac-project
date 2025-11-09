@@ -1,0 +1,425 @@
+header marquee {
+  background-color: yellow;
+  margin-top: -6px;
+  padding: 4px;
+}
+nav {
+  display: flex;
+  padding-left: 30px;
+  align-items: center;
+  color: white;
+  background-color: rgb(3, 3, 62);
+}
+#g { padding-left: 60px; }
+
+.social-icons {
+  display: flex;
+  gap: 35px;
+  font-size: 20px;
+  padding-left: 370px;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  color: #0077b5; /* Example: LinkedIn blue */
+}
+
+
+.gg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 25px;
+  background-color: #4CAF50;
+  padding-right: 100px;
+}
+#btn {
+  border-radius: 10px;
+  padding: 4px 8px;
+  font-size: 15px;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  background-color: #4CAF50;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animation background */
+main {
+  margin-top: -22px;
+  height: 600px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: ganesh 6s infinite steps(1);
+}
+@keyframes ganesh {
+  0% {background-image: url("https://thecyberexpress.com/wp-content/uploads/Who-Are-Hackers.png");}
+  33% {background-image: url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?fm=jpg&q=60&w=3000");}
+  67% {background-image: url("https://www.springboard.com/blog/wp-content/uploads/2022/09/programmng-language.jpg");}
+}
+main h1 { padding-left:150px; padding-top:150px; color:white; }
+main h3 { padding-left:150px; color:white; }
+main p1 { padding-left:150px; color:white; display:block; width:45%; }
+.apply {
+  background-color: #009970; color: white; border: none;
+  border-radius: 5px; font-size: 16px; font-weight: bold;
+  cursor: pointer; transition: background-color 0.3s;
+  margin-top: 40px; margin-left: 150px; padding: 15px;
+}
+.apply:hover { background-color: #00b383; }
+
+/* Dropdown */
+.dropdown { position: relative; display: inline-block; }
+.dropdown-content {
+  display: none;
+  top: 100%;
+  left: -20%;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content p {
+  color: black;
+  padding: 10px 16px;
+  margin: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+.dropdown-content p:hover { background-color: #f1f1f1; }
+.dropdown:hover .dropdown-content { display: block; position: absolute; }
+
+/* ---------- Enquiry Form (hover) ---------- */
+.enquiry-wrapper { position: relative; display: inline-block; }
+.enquiry-popup {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 300px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 15px;
+  z-index: 10;
+}
+.enquiry-wrapper:hover .enquiry-popup {
+  display: block;
+}
+.enquiry-popup h2 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.tab {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.enquiry-popup form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.enquiry-popup input, .enquiry-popup select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.enquiry-popup input[type="submit"] {
+  background-color: #009970;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.enquiry-popup input[type="submit"]:hover {
+  background-color: #00b383;
+}
+
+/* ---------- Apply Online Popup ---------- */
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1000;
+}
+.modal {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+}
+.modal-content { padding: 20px; }
+.modal-form div { margin: 20px 0; }
+.modal-form label { display: block; margin-bottom: 6px; font-weight: bold; }
+.modal-form .form-input {
+  padding: 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px;
+}
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 25px;
+  position: absolute;
+  top: 5px; right: 12px;
+  cursor: pointer;
+}
+.submit-btn {
+  padding: 10px 30px;
+  font-weight: bold;
+  background: crimson;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.modal-container.show-modal { display: block; }
+
+.gann h1{
+    text-align: center;
+    /* display:flex;
+    justify-content:center; */
+}
+ .gann p{
+    text-align: center;   
+}
+
+.feat{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding:30px;
+    grid-column-gap:10px;
+}
+
+
+.features {
+  background-color: #009970;
+  padding: 40px 20px 25px; /* top padding increased for icon space */
+  border-radius: 10px;
+  text-align: center;
+  position: relative; /* to anchor icon positioning */
+  color: white;
+  padding-bottom:30px;
+  box-shadow:10px 10px 40px;
+}
+
+.features:hover {
+  background-color: white;
+  color:black;
+   /* darker on hover */
+}
+
+.features i {
+  font-size: 28px;
+  position: absolute;
+  top: -20px; /* lifts icon slightly above box */
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: #009970;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.features h4 {
+  margin-top: 10px; /* spacing below icon */
+  font-weight: bold;
+}
+
+
+
+.courses {
+  text-align: center;
+  padding: 50px 80px;
+}
+
+.courses h1 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.course-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.course-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  transition: 0.3s;
+  position: relative;
+  text-align: center;
+  min-height: 300px;
+  padding-bottom:-150px;
+}
+
+
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.course-header {
+  background-color: #009970;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+  margin: -20px -20px 15px -20px;
+  font-size: 18px;
+}
+
+.course-card h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.stars {
+  color: gold;
+  margin: 10px 0;
+}
+
+.course-card p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.apply-btn {
+  background-color: #009970;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.apply-btn:hover {
+  background-color: #007d5c;
+}
+
+
+/* ====================== FOOTER ====================== */
+.footer {
+  background-color: #d8f3f1;
+  padding: 40px 80px;
+  color: #000;
+  font-family: Arial, sans-serif;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 300px auto auto auto;
+  gap: 30px;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+  color: #006653;
+}
+
+.footer-about p,
+.footer-office p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-services ul li {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.footer-subscribe .subscribe-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-subscribe input {
+  padding: 10px;
+  border: 1px solid #009970;
+  border-radius: 5px 0 0 5px;
+  flex: 1;
+  outline: none;
+}
+
+.footer-subscribe button {
+  background-color: #009970;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.footer-subscribe button:hover {
+  background-color: #007d5c;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-socials i {
+  background: #009970;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-socials i:hover {
+  background: #007d5c;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
